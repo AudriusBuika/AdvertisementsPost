@@ -14,6 +14,7 @@ Clone repository and create database, tables:
 ```
 $ git clone https://github.com/AudriusBuika/AdvertisementsPost.git ads_post
 $ cd ads_post
+$ composer install
 $ php bin/console doctrine:database:create
 $ php bin/console doctrine:schema:update
 ```
@@ -30,6 +31,9 @@ Source: https://coderwall.com/p/qpitzq/deploing-symfony-project-using-mysql-to-h
  - Heroku(https://heroku.com/)
  - Git
  
+Install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+Install Git: https://git-scm.com/downloads
+
 Open console and go to your project:
 ```
 $ cd ~/yourSymfonyProject
