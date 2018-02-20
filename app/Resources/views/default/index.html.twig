@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <div class="well">
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.title) }}
+                {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.title) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.description) }}
+                {{ form_widget(form.description, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.description) }}
+            </div>
+            <button type="submit" class="btn btn-success">Post</button>
+            {{ form_end(form) }}
+        </div>
+    {% endif %}
+
+    <h3>Advertisements post list</h3>
+    {% if post_list %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Title</th>
+            <th scope="col">Detal descrioption</th>
+            <th scope="col">Post date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for a in post_list %}
+            <tr>
+                <td>{{ a.username }}</td>
+                <td>{{ a.title }}</td>
+                <td>{{ a.description }}</td>
+                <td>{{ a.postDate.date | date("Y-m-d H:i:s") }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+
+{% endblock %}

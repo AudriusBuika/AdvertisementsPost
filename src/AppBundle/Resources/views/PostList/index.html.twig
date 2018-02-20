@@ -1,0 +1,30 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}My post list{% endblock %}
+
+{% block body %}
+    <h2>My post list</h2>
+    {% if post_list %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Title</th>
+            <th scope="col">Detal descrioption</th>
+            <th scope="col">Post date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for a in post_list %}
+            <tr>
+                <td>{{ a.username }}</td>
+                <td>{{ a.title }}</td>
+                <td>{{ a.description }}</td>
+                <td>{{ a.postDate.date | date("Y-m-d H:i:s") }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+{% endblock %}
