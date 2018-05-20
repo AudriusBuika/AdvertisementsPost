@@ -16,7 +16,7 @@ $ git clone https://github.com/AudriusBuika/AdvertisementsPost.git ads_post
 $ cd ads_post
 $ composer install
 $ php bin/console doctrine:database:create
-$ php bin/console doctrine:schema:update
+$ php bin/console doctrine:schema:update --force
 ```
 *and final run command*
 ```
